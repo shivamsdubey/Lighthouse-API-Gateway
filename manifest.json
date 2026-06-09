@@ -1,0 +1,47 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.16",
+    "version": "1.0.0",
+    "id": "lighthouse-secops-agent-2026",
+    "packageName": "com.microsoft.copilot.lighthouse.secops",
+    "developer": {
+        "name": "Shivam Dubey",
+        "websiteUrl": "https://github.com/shivam-dubey",
+        "privacyUrl": "https://github.com/shivam-dubey/privacy",
+        "termsOfUseUrl": "https://github.com/shivam-dubey/terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Lighthouse SecOps Agent",
+        "full": "Lighthouse Infrastructure & Security Intelligence Agent"
+    },
+    "description": {
+        "short": "AI Agent to monitor enterprise API routing, token logs, and server cluster load.",
+        "full": "Lighthouse SecOps Agent extends Microsoft 365 Copilot using Work IQ to analyze infrastructure logs, detect rate-limit anomalies, and manage enterprise API Gateway routing structures right inside Microsoft 365 workloads."
+    },
+    "capabilities": {
+        "copilotGpts": [
+            {
+                "id": "lighthouse-secops-gpt",
+                "scopes": ["tenant", "user"],
+                "instructions": {
+                    "file": "instructions.md"
+                },
+                "capabilities": [
+                    {
+                        "type": "WebSearch"
+                    },
+                    {
+                        "type": "WorkIQ",
+                        "description": "Grounds the agent using enterprise organizational context from emails, chats, and internal network documentation to track infrastructure anomalies."
+                    }
+                ]
+            }
+        ]
+    },
+    "permissions": ["identity", "messageTeamMembers"],
+    "validDomains": []
+}
